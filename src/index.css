@@ -18,7 +18,7 @@ body {
   border: 1px solid #DAD7D7;
   margin: 10px;
   color: #666;
-  cursor: pointer;
+  text-decoration: none;
 }
 
 .user-option:hover {
