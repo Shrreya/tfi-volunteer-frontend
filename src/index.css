@@ -3,3 +3,30 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+/* User List */
+
+.user-list {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.user-option {
+  width: 30%;
+  border: 1px solid #DAD7D7;
+  margin: 10px;
+  color: #666;
+  cursor: pointer;
+}
+
+.user-option:hover {
+  border: 1px solid #3CAFCA;
+}
+
+.user-icon {
+  height: 80px;
+  width: 80px;
+  margin:20px;
+}
