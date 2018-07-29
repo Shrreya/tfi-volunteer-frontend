@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
@@ -53,6 +54,7 @@ class CreateForm extends Component {
   render() {
 
     const { title, description, hours, location } = this.state;
+    const { cities } = this.props;
 
     return (
       <div className='create-form'>
@@ -92,30 +94,18 @@ class CreateForm extends Component {
               <AddCircleIcon />
             </IconButton>
           </div>
-          {/* TODO : fetch cities from backend, instead of hardcode*/ }
           <div style={{marginBottom: '20px'}}>
-            <Select
-              value={location}
-              onChange={this.handleChange('location')}
-            >
-              <MenuItem value='none'>
-                <em>City?</em>
+            <Select value={location} onChange={this.handleChange('location')}>
+              <MenuItem value='none' disabled>
+                City?
               </MenuItem>
-              <MenuItem value='mumbai'>
-                Mumbai
-              </MenuItem>
-              <MenuItem value='pune'>
-                Pune
-              </MenuItem>
-              <MenuItem value='kolkata'>
-                Kolkata
-              </MenuItem>
-              <MenuItem value='ahmedabad'>
-                Ahmedabad
-              </MenuItem>
-              <MenuItem value='delhi'>
-                New Delhi
-              </MenuItem>
+              {
+                cities.map((city) => (
+                  <MenuItem key={city.id} value={city.get('name')}>
+                    {city.get('name')}
+                  </MenuItem>
+                ))
+              }
             </Select>
           </div>
           <Button
@@ -133,4 +123,8 @@ class CreateForm extends Component {
   }
 }
 
-export default CreateForm;
+function mapStateToProps({ cities }) {
+  return { cities };
+}
+
+export default connect(mapStateToProps)(CreateForm);
