@@ -81,7 +81,7 @@ class SignupForm extends Component {
           />
           <TextField
             label='Cover Letter'
-            helperText='Tell us why you wish to sign up in approx 200 words'
+            helperText='Tell us why you wish to volunteer in approx 200 words'
             style={{width: '60%', marginBottom: '20px'}}
             multiline
             rowsMax='6'
