@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { handleSaveOpp } from '../actions/shared';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
@@ -48,7 +49,14 @@ class CreateForm extends Component {
 
   // Submit new volunteer opportunity
   handleSubmit = () => {
-    // TODO: save to backend
+    const opp = this.state;
+    this.setState({
+      title: '',
+      description: '',
+      hours: 4,
+      location: 'none'
+    });
+    this.props.dispatch(handleSaveOpp(opp));
   };
 
   render() {
