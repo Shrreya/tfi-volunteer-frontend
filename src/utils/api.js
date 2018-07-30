@@ -8,6 +8,7 @@ export function getInitialData () {
   var cityQuery = new Parse.Query(City);
   var Opp = Parse.Object.extend("Opportunity");
   var oppQuery = new Parse.Query(Opp);
+  oppQuery.descending("createdAt");
   return Promise.all([
     cityQuery.find(),
     oppQuery.find()
