@@ -67,3 +67,28 @@ body {
   text-align: center;
   color: #3CAFCA;
 }
+
+/* Opp List */
+
+.opp-list-container {
+  text-align: center;
+}
+
+.opp-list {
+  display: inline;
+}
+
+/* Opp Card */
+
+.opp-card {
+  padding: 10px;
+}
+
+.info-list {
+  display: inline-flex;
+}
+
+.info {
+  padding-left: 20px;
+  padding-right: 20px;
+}

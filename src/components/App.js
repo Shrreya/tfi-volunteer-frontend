@@ -8,6 +8,7 @@ import { handleInitialData } from '../actions/shared';
 import UserList from './UserList';
 import CreateForm from './CreateForm';
 import CreateSuccess from './CreateSuccess';
+import OppList from './OppList';
 
 class App extends Component {
 
@@ -23,6 +24,7 @@ class App extends Component {
           <Route exact path='/' component={UserList} />
           <Route exact path='/create' component={CreateForm} />
           <Route exact path='/create-success' component={CreateSuccess} />
+          <Route exact path='/search' component={OppList} />
         </Fragment>
       </ConnectedRouter>
     );
