@@ -4,6 +4,7 @@ import OppCard from './OppCard';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { handleSignup } from '../actions/shared';
 
 // Override theme properties to be used by material UI components
 const theme = createMuiTheme({
@@ -39,13 +40,16 @@ class SignupForm extends Component {
     this.setState({
       invalidEmail : !validateEmail(this.state.email)
     }, () => {
+      // Submit to backend if provided valid email
       if(!this.state.invalidEmail) {
-       this.setState({
-         name: '',
-         email: '',
-         reason: ''
-       });
-       // TODO : save signup to backend
+        const { name, email, reason } = this.state;
+        const oppId = this.props.opp.id;
+        this.props.dispatch(handleSignup({ name, email, reason, oppId }));
+        this.setState({
+          name: '',
+          email: '',
+          reason: ''
+        });
       }
     });
   };

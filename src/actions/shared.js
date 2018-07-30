@@ -1,4 +1,4 @@
-import { getInitialData, saveOpp } from '../utils/api';
+import { getInitialData, saveOpp, saveSignup } from '../utils/api';
 import { receiveCities } from '../actions/cities';
 import { receiveOpps, addOpp } from '../actions/opps';
 import { showLoading, hideLoading } from 'react-redux-loading';
@@ -29,6 +29,22 @@ export function handleSaveOpp (opp) {
         (opp) => {
           dispatch(addOpp(opp));
           dispatch(push('/create-success'));
+          dispatch(hideLoading());
+        },
+        (error) => {
+          // TODO: error handling
+        }
+      );
+  }
+}
+
+export function handleSignup (signup) {
+  return (dispatch) => {
+    dispatch(showLoading());
+    return saveSignup(signup)
+      .then(
+        (signup) => {
+          dispatch(push('/signup-success'));
           dispatch(hideLoading());
         },
         (error) => {
