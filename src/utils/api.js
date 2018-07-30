@@ -23,3 +23,9 @@ export function saveOpp (opp) {
   var oppObject = new Opp();
   return oppObject.save(opp);
 }
+
+export function saveSignup (signup) {
+  var SignUp = Parse.Object.extend("SignUp");
+  var signupObject = new SignUp();
+  return signupObject.save(signup);
+}
