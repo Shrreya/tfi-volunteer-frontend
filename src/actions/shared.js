@@ -15,7 +15,8 @@ export function handleInitialData () {
           dispatch(hideLoading());
         },
         (error) => {
-          // TODO: error handling
+          alert('Something went wrong! Please check Internet connection.');
+          dispatch(hideLoading());
         }
       );
   }
@@ -32,7 +33,8 @@ export function handleSaveOpp (opp) {
           dispatch(hideLoading());
         },
         (error) => {
-          // TODO: error handling
+          alert('Something went wrong! Please check Internet connection.');
+          dispatch(hideLoading());
         }
       );
   }
@@ -48,7 +50,8 @@ export function handleSignup (signup) {
           dispatch(hideLoading());
         },
         (error) => {
-          // TODO: error handling
+          alert('Something went wrong! Please check Internet connection.');
+          dispatch(hideLoading());
         }
       );
   }
