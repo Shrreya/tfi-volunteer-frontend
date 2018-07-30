@@ -10,6 +10,7 @@ import CreateForm from './CreateForm';
 import CreateSuccess from './CreateSuccess';
 import OppList from './OppList';
 import SignupForm from './SignupForm';
+import SignupSuccess from './SignupSuccess';
 
 class App extends Component {
 
@@ -27,6 +28,7 @@ class App extends Component {
           <Route exact path='/create-success' component={CreateSuccess} />
           <Route exact path='/search' component={OppList} />
           <Route exact path='/signup/:id' component={SignupForm} />
+          <Route exact path='/signup-success' component={SignupSuccess} />
         </Fragment>
       </ConnectedRouter>
     );

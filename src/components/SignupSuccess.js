@@ -10,13 +10,13 @@ const theme = createMuiTheme({
   }
 });
 
-class CreateSuccess extends Component {
+class SignupSuccess extends Component {
 
   render() {
 
     return (
       <div className='success-page'>
-        <h2>Thanks! New volunteer opportunity saved successfully.</h2>
+        <h2>Thanks! Signed up successfully.</h2>
         <MuiThemeProvider theme={theme}>
           <Button
             variant='outlined'
@@ -34,9 +34,9 @@ class CreateSuccess extends Component {
             color='primary'
             style={{margin: '5px'}}
             component={Link}
-            to={`/create`}
+            to={`/search`}
           >
-            Create more
+            Search more
           </Button>
         </MuiThemeProvider>
       </div>
@@ -44,4 +44,4 @@ class CreateSuccess extends Component {
   }
 }
 
-export default CreateSuccess;
+export default SignupSuccess;

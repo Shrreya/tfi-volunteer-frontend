@@ -52,13 +52,13 @@ body {
   font-size: 12px;
 }
 
-/* Create Success */
+/* Create Success & Signup Success */
 
-.create-success-page {
+.success-page {
   text-align: center;
 }
 
-.create-success-page h2 {
+.success-page h2 {
   text-align: center;
   color: #3CAFCA;
 }
