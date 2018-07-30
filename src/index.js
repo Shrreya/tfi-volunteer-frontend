@@ -14,7 +14,7 @@ const store = createStore(connectRouter(history)(reducer), middleware);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App history={history}/>
+    <App/>
   </Provider>,
 document.getElementById('root')
 );
