@@ -1,5 +1,7 @@
 import thunk from 'redux-thunk';
 import logger from './logger';
-import { applyMiddleware } from 'redux';
+import history from '../utils/history';
+import { routerMiddleware } from 'connected-react-router';
+import { applyMiddleware, compose } from 'redux';
 
-export default applyMiddleware(thunk, logger);
+export default compose(applyMiddleware(routerMiddleware(history),thunk, logger));
