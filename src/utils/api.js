@@ -16,3 +16,9 @@ export function getInitialData () {
     opps
   }));
 }
+
+export function saveOpp (opp) {
+  var Opp = Parse.Object.extend("Opportunity");
+  var oppObject = new Opp();
+  return oppObject.save(opp);
+}
