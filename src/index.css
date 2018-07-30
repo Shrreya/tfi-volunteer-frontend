@@ -56,3 +56,14 @@ body {
   color: #666;
   font-size: 12px;
 }
+
+/* Create Success */
+
+.create-success-page {
+  text-align: center;
+}
+
+.create-success-page h2 {
+  text-align: center;
+  color: #3CAFCA;
+}
